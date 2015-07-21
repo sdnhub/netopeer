@@ -1,5 +1,5 @@
 # Base image
-FROM ubuntu:14.04
+FROM debian
 MAINTAINER Srini <srini@sdnhub.org>
 
 # Install required software
@@ -7,7 +7,8 @@ RUN apt-get update && \
     apt-get install -y git libxml2 libxml2-dev libxslt-dev libssh2-1-dev  \
                    libcurl4-gnutls-dev libdbus-1-dev doxygen libevent-dev libreadline-dev \
                    libncurses-dev libxml++2.6-dev libtool python-libxml2 openssh-server \
-                   xsltproc cmake build-essential libssl-dev && \
+                   xsltproc cmake build-essential libssl-dev \
+                   libtool-bin wget && \
     apt-get clean && apt-get purge
 
 # Change to /root directory
