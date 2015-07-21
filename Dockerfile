@@ -21,13 +21,13 @@ RUN wget https://git.libssh.org/projects/libssh.git/snapshot/libssh-0.6.4.tar.gz
     cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Debug .. && \
     make && make install 
 
-# Install libnetconf
-RUN git clone https://code.google.com/p/libnetconf/ && \
-    cd /root/libnetconf && ./configure --with-nacm-recovery-uid=1000 && make && make install
-
 # Install pyang and lnctool
 RUN git clone https://github.com/mbj4668/pyang.git /root/pyang && \
     cd /root/pyang && python setup.py install
+
+# Install libnetconf
+RUN git clone https://code.google.com/p/libnetconf/ && \
+    cd /root/libnetconf && ./configure --with-nacm-recovery-uid=1000 && make && make install
 
 # Install lnctool
 RUN cp /root/libnetconf/dev-tools/lnctool/lnctool /usr/local/bin/
