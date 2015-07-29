@@ -28,7 +28,7 @@ RUN git clone https://github.com/mbj4668/pyang.git /root/pyang && \
 
 # Install libnetconf
 RUN git clone https://code.google.com/p/libnetconf/ && \
-    cd /root/libnetconf && ./configure --with-nacm-recovery-uid=1000 && make && make install
+    cd /root/libnetconf && ./configure --with-nacm-recovery-uid=0 && make && make install
 
 # Install lnctool
 RUN cp /root/libnetconf/dev-tools/lnctool/lnctool /usr/local/bin/
