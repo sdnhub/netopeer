@@ -27,14 +27,14 @@ RUN git clone https://github.com/mbj4668/pyang.git /root/pyang && \
     cd /root/pyang && python setup.py install
 
 # Install libnetconf
-RUN git clone https://code.google.com/p/libnetconf/ && \
+RUN git clone https://github.com/CESNET/libnetconf.git && \
     cd /root/libnetconf && ./configure --with-nacm-recovery-uid=0 && make && make install
 
 # Install lnctool
 RUN cp /root/libnetconf/dev-tools/lnctool/lnctool /usr/local/bin/
 
 # Install netopeer and cli
-RUN git clone https://code.google.com/p/netopeer/ /root/netopeer && \
+RUN git clone https://github.com/CESNET/netopeer.git /root/netopeer && \
     cd /root/netopeer/server && ./configure --disable-dbus && make && make install && \
     cd /root/netopeer/cli && ./configure && make && make install
 
