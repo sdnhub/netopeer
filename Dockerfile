@@ -8,7 +8,7 @@ RUN apt-get update && \
                    libcurl4-gnutls-dev libdbus-1-dev doxygen libevent-dev libreadline-dev \
                    libncurses-dev libxml++2.6-dev libtool python-libxml2 openssh-server \
                    xsltproc cmake build-essential libssl-dev \
-                   libtool-bin wget python-setuptools && \
+                   libtool-bin wget python-setuptools vim && \
     apt-get clean && apt-get purge
 
 # Change to /root directory
